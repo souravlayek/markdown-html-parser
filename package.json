@@ -1,16 +1,26 @@
 {
   "name": "markdown-to-html",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "A simple markdown to html converter",
-  "main": "index.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "tsc -w index.ts",
-    "start": "ts-node ."
+    "clean": "rimraf ./dist",
+    "build": "npm run clean && tsc",
+    "minify": "terser dist/index.js --compress --mangle --output dist/index.min.js",
+    "dev": "ts-node ./src/index.ts",
+    "test": "ts-node ./test/",
+    "prepublish": "npm run build && npm run minify"
   },
-  "author": "",
+  "author": "Sourav Layek",
   "license": "ISC",
   "devDependencies": {
+    "@types/node": "^20.12.12",
+    "rimraf": "^5.0.7",
+    "terser": "^5.31.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.4.5"
   }

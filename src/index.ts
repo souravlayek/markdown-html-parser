@@ -29,11 +29,17 @@ class MarkdownParser {
   }
 
   private protectCodeBlocks(markdown: string): string {
-    return markdown.replace(/```([\s\S]*?)```/g, (match, code) => {
-      const placeholder = `<!--codeblock${this.codeBlockPlaceholders.length}-->`;
-      this.codeBlockPlaceholders.push(`<pre><code>${code}</code></pre>`);
-      return placeholder;
-    });
+    return markdown.replace(
+      /```(\w+)?\s*([\s\S]*?)```/g,
+      (match, lang, code) => {
+        const languageClass = lang ? ` class="language-${lang}"` : "";
+        const placeholder = `<!--codeblock${this.codeBlockPlaceholders.length}-->`;
+        this.codeBlockPlaceholders.push(
+          `<pre><code${languageClass}>${code}</code></pre>`
+        );
+        return placeholder;
+      }
+    );
   }
 
   private restoreCodeBlocks(html: string): string {
@@ -56,7 +62,7 @@ class MarkdownParser {
   }
 
   private parseItalic(markdown: string): string {
-    return markdown.replace(/\*(.+?)\*/g, "<em>$1</em>");
+    return markdown.replace(/(\*|_)(.+?)\1/g, "<em>$2</em>");
   }
 
   private parseLinks(markdown: string): string {
@@ -104,7 +110,7 @@ class MarkdownParser {
 
 export default MarkdownParser
 
-export function parseMarkdownToHTML(markdown) {
+export function parseMarkdownToHTML(markdown: string) {
     const parser = new MarkdownParser(markdown)
     return parser.parse()
 }
