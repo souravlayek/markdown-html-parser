@@ -1,3 +1,4 @@
+import HTMLTokenizer from "./htmlTokenizer";
 class MarkdownParser {
   private markdown: string;
   private codeBlockPlaceholders: string[];
@@ -113,4 +114,10 @@ export default MarkdownParser
 export function parseMarkdownToHTML(markdown: string) {
     const parser = new MarkdownParser(markdown)
     return parser.parse()
+}
+
+export function getDomTreeFromMarkdown(markdown: string) {
+  const html = parseMarkdownToHTML(markdown)
+  const tokenizer = new HTMLTokenizer(html)
+  return tokenizer.getDomTree()
 }

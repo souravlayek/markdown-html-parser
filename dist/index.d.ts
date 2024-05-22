@@ -17,3 +17,4 @@ declare class MarkdownParser {
 }
 export default MarkdownParser;
 export declare function parseMarkdownToHTML(markdown: string): string;
+export declare function getDomTreeFromMarkdown(markdown: string): import("./htmlTokenizer").DOMTree[];

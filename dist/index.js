@@ -1,6 +1,10 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.parseMarkdownToHTML = void 0;
+exports.getDomTreeFromMarkdown = exports.parseMarkdownToHTML = void 0;
+const htmlTokenizer_1 = __importDefault(require("./htmlTokenizer"));
 class MarkdownParser {
     constructor(markdown) {
         this.markdown = markdown;
@@ -87,3 +91,9 @@ function parseMarkdownToHTML(markdown) {
     return parser.parse();
 }
 exports.parseMarkdownToHTML = parseMarkdownToHTML;
+function getDomTreeFromMarkdown(markdown) {
+    const html = parseMarkdownToHTML(markdown);
+    const tokenizer = new htmlTokenizer_1.default(html);
+    return tokenizer.getDomTree();
+}
+exports.getDomTreeFromMarkdown = getDomTreeFromMarkdown;
