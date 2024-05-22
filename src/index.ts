@@ -74,7 +74,7 @@ class MarkdownParser {
   }
 
   private parseInlineCode(markdown: string): string {
-    return markdown.replace(/`(.+?)`/g, "<code>$1</code>");
+    return markdown.replace(/`(.+?)`/g, "<i>$1</i>");
   }
 
   private parseParagraphs(markdown: string): string {

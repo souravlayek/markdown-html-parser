@@ -57,7 +57,7 @@ class MarkdownParser {
         return markdown.replace(/!\[(.*?)\]\((.+?)\)/g, '<img src="$2" alt="$1"/>');
     }
     parseInlineCode(markdown) {
-        return markdown.replace(/`(.+?)`/g, "<code>$1</code>");
+        return markdown.replace(/`(.+?)`/g, "<i>$1</i>");
     }
     parseParagraphs(markdown) {
         return markdown.replace(/^(?!<.*>)(.+)$/gm, "<p>$1</p>");
