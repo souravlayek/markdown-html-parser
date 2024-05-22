@@ -54,7 +54,7 @@ class MarkdownParser {
         return markdown.replace(/\[(.+?)\]\((.+?)\)/g, '<a href="$2">$1</a>');
     }
     parseImages(markdown) {
-        return markdown.replace(/!\[(.*?)\]\((.+?)\)/g, '<img src="$2" alt="$1">');
+        return markdown.replace(/!\[(.*?)\]\((.+?)\)/g, '<img src="$2" alt="$1"/>');
     }
     parseInlineCode(markdown) {
         return markdown.replace(/`(.+?)`/g, "<code>$1</code>");

@@ -70,7 +70,7 @@ class MarkdownParser {
   }
 
   private parseImages(markdown: string): string {
-    return markdown.replace(/!\[(.*?)\]\((.+?)\)/g, '<img src="$2" alt="$1">');
+    return markdown.replace(/!\[(.*?)\]\((.+?)\)/g, '<img src="$2" alt="$1"/>');
   }
 
   private parseInlineCode(markdown: string): string {
