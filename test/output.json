@@ -1,0 +1,511 @@
+[
+    {
+        "tag": "em",
+        "tagType": "OPEN",
+        "attributes": {},
+        "content": null,
+        "children": [
+            {
+                "tag": "TEXT",
+                "tagType": "TEXT",
+                "attributes": {},
+                "content": "State",
+                "children": []
+            }
+        ]
+    },
+    {
+        "tag": "TEXT",
+        "tagType": "TEXT",
+        "attributes": {},
+        "content": " of a component is an object that holds some information that may change over the lifetime of the component. The important point is whenever the state object changes, the component re-renders. It is always recommended to make our state as simple as possible and minimize the number of stateful components.\n\n",
+        "children": []
+    },
+    {
+        "tag": "p",
+        "tagType": "OPEN",
+        "attributes": {},
+        "content": null,
+        "children": [
+            {
+                "tag": "TEXT",
+                "tagType": "TEXT",
+                "attributes": {},
+                "content": "    ",
+                "children": []
+            },
+            {
+                "tag": "img",
+                "tagType": "OPEN",
+                "attributes": {
+                    "src": "images/state.jpg",
+                    "alt": "state"
+                },
+                "content": null,
+                "children": []
+            }
+        ]
+    },
+    {
+        "tag": "TEXT",
+        "tagType": "TEXT",
+        "attributes": {},
+        "content": "\n\n",
+        "children": []
+    },
+    {
+        "tag": "p",
+        "tagType": "OPEN",
+        "attributes": {},
+        "content": null,
+        "children": [
+            {
+                "tag": "TEXT",
+                "tagType": "TEXT",
+                "attributes": {},
+                "content": "    Let's take an example of ",
+                "children": []
+            },
+            {
+                "tag": "strong",
+                "tagType": "OPEN",
+                "attributes": {},
+                "content": null,
+                "children": [
+                    {
+                        "tag": "TEXT",
+                        "tagType": "TEXT",
+                        "attributes": {},
+                        "content": "User",
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "tag": "TEXT",
+                "tagType": "TEXT",
+                "attributes": {},
+                "content": " component with ",
+                "children": []
+            },
+            {
+                "tag": "i",
+                "tagType": "OPEN",
+                "attributes": {},
+                "content": null,
+                "children": [
+                    {
+                        "tag": "TEXT",
+                        "tagType": "TEXT",
+                        "attributes": {},
+                        "content": "message",
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "tag": "TEXT",
+                "tagType": "TEXT",
+                "attributes": {},
+                "content": " state. Here, ",
+                "children": []
+            },
+            {
+                "tag": "strong",
+                "tagType": "OPEN",
+                "attributes": {},
+                "content": null,
+                "children": [
+                    {
+                        "tag": "TEXT",
+                        "tagType": "TEXT",
+                        "attributes": {},
+                        "content": "useState",
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "tag": "TEXT",
+                "tagType": "TEXT",
+                "attributes": {},
+                "content": " hook has been used to add state to the User component and it returns an array with current state and function to update it.",
+                "children": []
+            }
+        ]
+    },
+    {
+        "tag": "TEXT",
+        "tagType": "TEXT",
+        "attributes": {},
+        "content": "\n\n",
+        "children": []
+    },
+    {
+        "tag": "p",
+        "tagType": "OPEN",
+        "attributes": {},
+        "content": null,
+        "children": [
+            {
+                "tag": "TEXT",
+                "tagType": "TEXT",
+                "attributes": {},
+                "content": "    ",
+                "children": []
+            },
+            {
+                "tag": "pre",
+                "tagType": "OPEN",
+                "attributes": {},
+                "content": null,
+                "children": [
+                    {
+                        "tag": "code",
+                        "tagType": "OPEN",
+                        "attributes": {
+                            "class": "language-jsx"
+                        },
+                        "content": null,
+                        "children": [
+                            {
+                                "tag": "TEXT",
+                                "tagType": "TEXT",
+                                "attributes": {},
+                                "content": "harmony\n    import { useState } from \"react\";\n\n    function User() {\n      const [message, setMessage] = useState(\"Welcome to React world\");\n\n      return (\n        ",
+                                "children": []
+                            },
+                            {
+                                "tag": "div",
+                                "tagType": "OPEN",
+                                "attributes": {},
+                                "content": null,
+                                "children": [
+                                    {
+                                        "tag": "TEXT",
+                                        "tagType": "TEXT",
+                                        "attributes": {},
+                                        "content": "\n          ",
+                                        "children": []
+                                    },
+                                    {
+                                        "tag": "h1",
+                                        "tagType": "OPEN",
+                                        "attributes": {},
+                                        "content": null,
+                                        "children": [
+                                            {
+                                                "tag": "TEXT",
+                                                "tagType": "TEXT",
+                                                "attributes": {},
+                                                "content": "{message}",
+                                                "children": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "tag": "TEXT",
+                                        "tagType": "TEXT",
+                                        "attributes": {},
+                                        "content": "\n        ",
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "tag": "TEXT",
+                                "tagType": "TEXT",
+                                "attributes": {},
+                                "content": "\n      );\n    }\n    ",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "tag": "TEXT",
+        "tagType": "TEXT",
+        "attributes": {},
+        "content": "\n\n",
+        "children": []
+    },
+    {
+        "tag": "p",
+        "tagType": "OPEN",
+        "attributes": {},
+        "content": null,
+        "children": [
+            {
+                "tag": "TEXT",
+                "tagType": "TEXT",
+                "attributes": {},
+                "content": "    Whenever React calls your component or access ",
+                "children": []
+            },
+            {
+                "tag": "i",
+                "tagType": "OPEN",
+                "attributes": {},
+                "content": null,
+                "children": [
+                    {
+                        "tag": "TEXT",
+                        "tagType": "TEXT",
+                        "attributes": {},
+                        "content": "useState",
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "tag": "TEXT",
+                "tagType": "TEXT",
+                "attributes": {},
+                "content": " hook, it gives you a snapshot of the state for that particular render.",
+                "children": []
+            }
+        ]
+    },
+    {
+        "tag": "TEXT",
+        "tagType": "TEXT",
+        "attributes": {},
+        "content": "\n\n",
+        "children": []
+    },
+    {
+        "tag": "p",
+        "tagType": "OPEN",
+        "attributes": {},
+        "content": null,
+        "children": [
+            {
+                "tag": "TEXT",
+                "tagType": "TEXT",
+                "attributes": {},
+                "content": "    ",
+                "children": []
+            },
+            {
+                "tag": "details",
+                "tagType": "OPEN",
+                "attributes": {},
+                "content": null,
+                "children": [
+                    {
+                        "tag": "summary",
+                        "tagType": "OPEN",
+                        "attributes": {},
+                        "content": null,
+                        "children": [
+                            {
+                                "tag": "b",
+                                "tagType": "OPEN",
+                                "attributes": {},
+                                "content": null,
+                                "children": [
+                                    {
+                                        "tag": "TEXT",
+                                        "tagType": "TEXT",
+                                        "attributes": {},
+                                        "content": "See Class",
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "tag": "TEXT",
+        "tagType": "TEXT",
+        "attributes": {},
+        "content": "\n",
+        "children": []
+    },
+    {
+        "tag": "p",
+        "tagType": "OPEN",
+        "attributes": {},
+        "content": null,
+        "children": [
+            {
+                "tag": "TEXT",
+                "tagType": "TEXT",
+                "attributes": {},
+                "content": "    ",
+                "children": []
+            },
+            {
+                "tag": "p",
+                "tagType": "OPEN",
+                "attributes": {},
+                "content": null,
+                "children": []
+            },
+            {
+                "tag": "TEXT",
+                "tagType": "TEXT",
+                "attributes": {},
+                "content": "\n\n",
+                "children": []
+            },
+            {
+                "tag": "p",
+                "tagType": "OPEN",
+                "attributes": {},
+                "content": null,
+                "children": [
+                    {
+                        "tag": "TEXT",
+                        "tagType": "TEXT",
+                        "attributes": {},
+                        "content": "    ",
+                        "children": []
+                    },
+                    {
+                        "tag": "pre",
+                        "tagType": "OPEN",
+                        "attributes": {},
+                        "content": null,
+                        "children": [
+                            {
+                                "tag": "code",
+                                "tagType": "OPEN",
+                                "attributes": {
+                                    "class": "language-jsx"
+                                },
+                                "content": null,
+                                "children": [
+                                    {
+                                        "tag": "TEXT",
+                                        "tagType": "TEXT",
+                                        "attributes": {},
+                                        "content": "harmony\n    import React from 'react';\n    class User extends React.Component {\n      constructor(props) {\n        super(props);\n\n        this.state = {\n          message: \"Welcome to React world\",\n        };\n      }\n\n      render() {\n        return (\n          ",
+                                        "children": []
+                                    },
+                                    {
+                                        "tag": "div",
+                                        "tagType": "OPEN",
+                                        "attributes": {},
+                                        "content": null,
+                                        "children": [
+                                            {
+                                                "tag": "TEXT",
+                                                "tagType": "TEXT",
+                                                "attributes": {},
+                                                "content": "\n            ",
+                                                "children": []
+                                            },
+                                            {
+                                                "tag": "h1",
+                                                "tagType": "OPEN",
+                                                "attributes": {},
+                                                "content": null,
+                                                "children": [
+                                                    {
+                                                        "tag": "TEXT",
+                                                        "tagType": "TEXT",
+                                                        "attributes": {},
+                                                        "content": "{this.state.message}",
+                                                        "children": []
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "tag": "TEXT",
+                                                "tagType": "TEXT",
+                                                "attributes": {},
+                                                "content": "\n          ",
+                                                "children": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "tag": "TEXT",
+                                        "tagType": "TEXT",
+                                        "attributes": {},
+                                        "content": "\n        );\n      }\n    }\n    ",
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "tag": "TEXT",
+                "tagType": "TEXT",
+                "attributes": {},
+                "content": "\n\n",
+                "children": []
+            },
+            {
+                "tag": "p",
+                "tagType": "OPEN",
+                "attributes": {},
+                "content": null,
+                "children": [
+                    {
+                        "tag": "TEXT",
+                        "tagType": "TEXT",
+                        "attributes": {},
+                        "content": "    ",
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "tag": "TEXT",
+        "tagType": "TEXT",
+        "attributes": {},
+        "content": "\n",
+        "children": []
+    },
+    {
+        "tag": "p",
+        "tagType": "OPEN",
+        "attributes": {},
+        "content": null,
+        "children": [
+            {
+                "tag": "TEXT",
+                "tagType": "TEXT",
+                "attributes": {},
+                "content": "    ",
+                "children": []
+            }
+        ]
+    },
+    {
+        "tag": "TEXT",
+        "tagType": "TEXT",
+        "attributes": {},
+        "content": "\n\n",
+        "children": []
+    },
+    {
+        "tag": "p",
+        "tagType": "OPEN",
+        "attributes": {},
+        "content": null,
+        "children": [
+            {
+                "tag": "TEXT",
+                "tagType": "TEXT",
+                "attributes": {},
+                "content": "    State is similar to props, but it is private and fully controlled by the component ,i.e., it is not accessible to any other component till the owner component decides to pass it.",
+                "children": []
+            }
+        ]
+    }
+]

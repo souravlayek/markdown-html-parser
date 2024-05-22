@@ -41,13 +41,13 @@ class HTMLTokenizer {
         const result = {
             tag: match === null || match === void 0 ? void 0 : match[1],
             tagType: "SELF_CLOSE",
-            attributes: [],
+            attributes: {},
             content: null,
         };
         const attributeRegex = /(\w+)\s*=\s*["']([^"']*)["']/g;
         let attributeMatch;
         while ((attributeMatch = attributeRegex.exec(match[2])) !== null) {
-            result.attributes.push({ [attributeMatch[1]]: attributeMatch[2] });
+            result.attributes[attributeMatch[1]] = attributeMatch[2];
         }
         this.shiftPosition(this.currentPosition + codeBlock.length);
         return result;
@@ -62,9 +62,9 @@ class HTMLTokenizer {
         const tagName = match === null || match === void 0 ? void 0 : match[1];
         const attrRegex = /(\w+)\s*=\s*['"]([^'"]*)['"]/g;
         let attrMatch;
-        let attributes = [];
+        let attributes = {};
         while ((attrMatch = attrRegex.exec(element)) !== null) {
-            attributes.push({ [attrMatch[1]]: attrMatch[2] });
+            attributes[attrMatch[1]] = attrMatch[2];
         }
         return {
             name: tagName,
@@ -183,7 +183,7 @@ class HTMLTokenizer {
                 tokenList.push({
                     tag: element.replace(/<\/(\w+)>/g, "$1"),
                     tagType: "CLOSE",
-                    attributes: [],
+                    attributes: {},
                     content: null,
                 });
             }
@@ -191,7 +191,7 @@ class HTMLTokenizer {
                 tokenList.push({
                     tag: "TEXT",
                     tagType: "TEXT",
-                    attributes: [],
+                    attributes: {},
                     content: element,
                 });
             }

@@ -1,7 +1,7 @@
 export type Token = {
   tag: string; // div, p, TEXT<for text only>
   tagType: "OPEN" | "CLOSE" | "SELF_CLOSE" | "TEXT"; // OPEN, CLOSE, TEXT
-  attributes: Record<string, string>[];
+  attributes: Record<string, string>;
   content: string | null; // For Text Node only
 };
 
@@ -63,14 +63,14 @@ class HTMLTokenizer {
     const result: Token = {
       tag: match?.[1],
       tagType: "SELF_CLOSE",
-      attributes: [],
+      attributes: {},
       content: null,
     };
 
     const attributeRegex = /(\w+)\s*=\s*["']([^"']*)["']/g;
     let attributeMatch: any;
     while ((attributeMatch = attributeRegex.exec(match[2])) !== null) {
-      result.attributes.push({ [attributeMatch[1]]: attributeMatch[2] });
+      result.attributes[attributeMatch[1]]= attributeMatch[2]
     }
     this.shiftPosition(this.currentPosition + codeBlock.length);
     return result;
@@ -82,16 +82,16 @@ class HTMLTokenizer {
   }
   private extractNameAndAttributes(element: string): {
     name: string;
-    attributes: Record<string, string>[];
+    attributes: Record<string, string>;
   } {
     const regex = /<(\w+)[^>]*>/g;
     const match = regex.exec(element);
     const tagName = match?.[1];
     const attrRegex = /(\w+)\s*=\s*['"]([^'"]*)['"]/g;
     let attrMatch;
-    let attributes: Record<string, string>[] = [];
+    let attributes: Record<string, string> = {};
     while ((attrMatch = attrRegex.exec(element)) !== null) {
-      attributes.push({ [attrMatch[1]]: attrMatch[2] });
+      attributes[attrMatch[1]] = attrMatch[2]
     }
     return {
       name: tagName!,
@@ -212,14 +212,14 @@ class HTMLTokenizer {
         tokenList.push({
           tag: element.replace(/<\/(\w+)>/g, "$1"),
           tagType: "CLOSE",
-          attributes: [],
+          attributes: {},
           content: null,
         });
       } else {
         tokenList.push({
           tag: "TEXT",
           tagType: "TEXT",
-          attributes: [],
+          attributes: {},
           content: element,
         });
       }

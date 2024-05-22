@@ -1,7 +1,7 @@
 export type Token = {
     tag: string;
     tagType: "OPEN" | "CLOSE" | "SELF_CLOSE" | "TEXT";
-    attributes: Record<string, string>[];
+    attributes: Record<string, string>;
     content: string | null;
 };
 export type DOMTree = Token & {

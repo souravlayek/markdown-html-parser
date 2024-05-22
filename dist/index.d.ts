@@ -1,3 +1,4 @@
+export * from "./htmlTokenizer";
 declare class MarkdownParser {
     private markdown;
     private codeBlockPlaceholders;

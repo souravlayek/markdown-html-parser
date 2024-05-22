@@ -1,4 +1,5 @@
 import HTMLTokenizer from "./htmlTokenizer";
+export * from "./htmlTokenizer"
 class MarkdownParser {
   private markdown: string;
   private codeBlockPlaceholders: string[];
