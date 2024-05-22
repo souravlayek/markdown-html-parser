@@ -15,8 +15,8 @@ class MarkdownParser {
         html = this.parseLists(html);
         html = this.parseBold(html);
         html = this.parseItalic(html);
-        html = this.parseLinks(html);
         html = this.parseImages(html);
+        html = this.parseLinks(html);
         html = this.parseInlineCode(html);
         html = this.parseParagraphs(html);
         // Second pass: restore code blocks
